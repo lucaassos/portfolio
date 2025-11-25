@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --background-color: #1a1b26; 
+    --foreground-color: #24283b; 
+    --primary-color: #7aa2f7;    
+    --secondary-color: #bb9af7;  
+    --text-color: #c0caf5;       
+    --heading-color: #a9b1d6;    
+    --comment-color: #565f89;    
+    --green-color: #9ece6a;      
+
+    --font-primary: 'Roboto', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: var(--font-mono);
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: 100px 10%;
+    border-bottom: 1px solid var(--foreground-color);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1rem 10%;
+    background-color: rgba(26, 27, 38, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--foreground-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-family: var(--font-mono);
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#hero .hero-text p {
+    font-family: var(--font-mono);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+#hero h1 {
+    font-size: 4rem;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    color: var(--comment-color);
+    margin-bottom: 2rem;
+}
+
+.hero-description {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: var(--text-color) !important; 
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+#about h2, #contact h2 {
+    font-size: 2.5rem;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.skill-tag {
+    background-color: var(--foreground-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    border-left: 3px solid var(--green-color);
+    transition: transform 0.2s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px);
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+}
+
+.projects-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.projects-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem; 
+    margin-top: 2rem;
+    cursor: grab;
+}
+.projects-grid::-webkit-scrollbar {
+    display: none; 
+}
+.projects-grid {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.project-card {
+    background-color: var(--foreground-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; 
+    width: 400px; 
+    justify-content: space-between;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.project-gallery {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.gallery-images {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: cover; 
+    border: 1px solid var(--comment-color);
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(26, 27, 38, 0.7);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-gallery:hover .gallery-btn {
+    opacity: 1;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.project-card h3 {
+    font-family: var(--font-mono);
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    font-family: var(--font-mono);
+    color: var(--comment-color);
+}
+
+
+@media (max-width: 1024px) {
+    section {
+        padding: 90px 8%;
+    }
+
+    #hero h1 {
+        font-size: 3.5rem;
+    }
+
+    #hero h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 80px 5%;
+    }
+
+    header {
+        padding: 1rem 5%;
+    }
+
+    #hero h1 { font-size: 3rem; }
+    #hero h2 { font-size: 1.8rem; }
+
+    .project-card {
+        width: 80vw; 
+        max-width: 350px; 
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 60%;
+        max-width: 300px;
+        background-color: var(--foreground-color);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 25vh;
+        gap: 3rem;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 200;
+    }
+
+    .nav-links.open {
+        transform: translateX(0%);
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li.fade {
+        opacity: 1;
+        transition: opacity 0.5s ease 0.4s;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 201;
+    }
+
+    .hamburger.toggle .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.toggle .line:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.toggle .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    #hero {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin: 0 auto;
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 35px; 
+}
+
+@media (max-width: 480px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
